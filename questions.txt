@@ -1,0 +1,20 @@
+a)	What is sharding in mongoDB?
+    Sharding er en måde at horizontal scale data ud på flere forskellige computere/servere(shards), det hjælper med at øge
+    performance på store mængder af data
+b)	What are the different components required to implement sharding?
+    Man har brug for shards(Hver shard har et subset af det sharded data), 
+    mongos(er en router mellem client data og den shardede cluster) 
+    og config server(indeholder metadata og konfig indstillinger). 
+c)	Explain architecture of sharding in mongoDB?
+    https://webimages.mongodb.com/_com_assets/cms/kyc08hm61who5ts6t-image4.png?auto=format%252Ccompress
+    En shard indeholder alt dataen. Mongos er query routeren som håndtere alle read og writes,
+    fra en client, en client connecter til mongos ikke til en shard. config server har alt metadata, osv.
+
+
+d)	Provide implementation of map and reduce function
+    Mapreduce er deprecated og kunne ikke bruge det
+e)	Provide execution command for running MapReduce or the aggregate way of doing the same
+    Kunne ikke lige få til at virke
+    db.tweets.aggregate([{$match: { text: "#" },{$group: { _id: "$text", totalQuantity: { $sum:1} }}}])
+f)	Provide top 10 recorded out of the sorted result. (hint: use sort on the result returned by MapReduce or the aggregate way of doing the same)
+    kom ikke hertil
